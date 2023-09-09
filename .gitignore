@@ -1,0 +1,9 @@
+# IntelliJ project files
+.idea
+
+# build
+/dist
+
+# node js
+/node_modules
+
