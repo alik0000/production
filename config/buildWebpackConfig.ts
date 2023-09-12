@@ -15,7 +15,7 @@ export function buildWebpackConfig(options: BuildOptions) {
         entry: paths.entry,
         devtool,
         module: {
-            rules: buildLoaders(),
+            rules: buildLoaders(options),
         },
         resolve: buildResolvers(),
         output: {
