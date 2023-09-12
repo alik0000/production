@@ -1,3 +1,5 @@
 import {testFunc} from "./test";
 
-console.log(testFunc(3232));
+console.log(testFunc(22222222222));
+
+document.body.style.background = 'blue'
