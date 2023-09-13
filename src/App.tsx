@@ -1,16 +1,25 @@
-import styles from "./styles/button.module.scss";
-import {useState} from "react";
+import {NavLink, Route, Routes} from 'react-router-dom'
+import {MainPageAsync} from "./pages/MainPage/MainPage.async";
+import {AboutPageAsync} from "./pages/AboutPage/AboutPage.async";
+import {Suspense} from "react";
 
 export const App = () => {
-    const [count, setCount] = useState(0)
-    const increase = () => setCount(count + 1)
-    const decrease = () => setCount(count - 1)
-
     return(
         <div className={'app'}>
-            <h2>Counter: {count}</h2>
-            <button className={styles.accent} onClick={increase}>increase</button>
-            <button className={styles.danger} onClick={decrease}>decrease</button>
+            <nav>
+                <NavLink to="/">
+                    Main
+                </NavLink>
+                <NavLink to="/about">
+                    About
+                </NavLink>
+            </nav>
+            <Suspense fallback={<h2>Loading...</h2>}>
+                <Routes>
+                    <Route path={'/'} element={<MainPageAsync/>}/>
+                    <Route path={'/about'} element={<AboutPageAsync/>}/>
+                </Routes>
+            </Suspense>
         </div>
     )
 }
