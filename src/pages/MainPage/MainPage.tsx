@@ -1,23 +1,15 @@
-import styles from "../../styles/button.module.scss";
-import {useState} from "react";
-
 export default function MainPage() {
-
-    const [count, setCount] = useState(0)
-    const increase = () => setCount(count + 1)
-    const decrease = () => setCount(count - 1)
-
     return(
-        <div>
+        <>
             <h2>Main page</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, ut!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
+                aut dicta dignissimos eveniet hic illo laborum modi nemo odio
+                pariatur, quasi quod recusandae voluptates! Ad culpa debitis deserunt
+                dolor eveniet illo illum in nihil, pariatur quas. Accusantium ad eius
+                eos ipsam laboriosam, placeat quaerat quisquam? A aspernatur dolorem ea molestiae?
             </p>
-            <div>
-                <h2>Counter: {count}</h2>
-                <button className={styles.accent} onClick={increase}>increase</button>
-                <button className={styles.danger} onClick={decrease}>decrease</button>
-            </div>
-        </div>
+        </>
     )
 }

@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 3.2rem;
+  height: 8rem;
+  border-bottom: 1px solid var(--element-background-fade);
+}
+
+.logo {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 35%;
+  background-color: var(--primary);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-left: auto;
+
+  a {
+    color: currentColor;
+    transition: color .35s ease-in-out;
+    font-weight: 600;
+    font-size: 2.2rem;
+
+    &:hover,
+    &.active {
+      color: var(--primary-light);
+    }
+  }
+}
+
+button {
+  padding: 12px 24px;
+  border: 1px solid var(--primary-light);
+  border-radius: 1.2rem;
+  margin-left: 2.4rem;
+  opacity: 1;
+  transition: .35s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

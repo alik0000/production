@@ -1,0 +1,62 @@
+// --
+// base
+// ==
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  outline: none;
+}
+// --
+// base styles
+// ==
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  background: #fff; // in some versions Opera background is black by default
+
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    font-size: calc(10px + 10 * (100vw - 375px) / (767 - 375));
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    font-size: calc(10px + 3.3 * (100vw - 768px) / (1023 - 768));
+  }
+
+  @media (min-width: 1024px) {
+    font-size: calc(8px + 2 * (100vw - 1024px) / (1440 - 1024));
+  }
+}
+.app {
+  position: relative;
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  font-family: $font-family-main;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &.dark {
+    background-color: var(--primary-dark);
+    color: var(--text-contrast-color);
+  }
+
+  &.light {
+    background: var(--app-background);
+    color: var(--text-color);
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  padding-top: $height_header;
+  overflow: hidden;
+}

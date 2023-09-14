@@ -1,0 +1,63 @@
+// start input type=number без стрелок
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix */
+}
+
+input[type='number']:hover,
+input[type='number']:focus {
+  -moz-appearance: number-input; /* stylelint-disable-line property-no-vendor-prefix */
+}
+// end
+
+// disable transition on load
+.transition-disabled * {
+  transition: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.hidden,
+[hidden] {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+*.disabled {
+  cursor: not-allowed;
+  opacity: 0.33;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+picture img {
+  display: block;
+}

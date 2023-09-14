@@ -1,21 +1,16 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  outline: none;
-}
+// structure info https://www.easeout.co/blog/2020-08-25-structuring-your-sass-projects/
+// INFO: vendor plugins import in vendor.scss
 
-html,
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-}
+// ==
+// 1 - import utils
+// ==
+@import "utils/colors",
+        'utils/global',
+        'utils/variables';
 
-body {
-  color: #ff0202;
-}
-.active {
-  color: #000eff;
-  font-weight: 700;
-}
+
+// ==
+// 2 - import base styles
+// ==
+@import 'base/base',
+        'base/reset';
