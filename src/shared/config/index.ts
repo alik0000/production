@@ -1,1 +1,1 @@
-export { ROUTE_CONSTANTS } from './routes'
+export { AppRoutes, RoutePaths, routConfig } from './routes/routes'

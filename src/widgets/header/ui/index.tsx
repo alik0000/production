@@ -1,4 +1,4 @@
-import {useTheme} from "app/lib/theme/useTheme";
+import {useTheme} from "app/providers/theme/lib/useTheme";
 import s from "./styles.module.scss";
 import { Navigation } from "features";
 

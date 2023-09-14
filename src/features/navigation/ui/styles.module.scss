@@ -5,14 +5,14 @@ nav {
   margin-left: auto;
 
   a {
-    color: currentColor;
+    color: var(--primary-light);
     transition: color .35s ease-in-out;
     font-weight: 600;
     font-size: 2.2rem;
 
     &:hover,
     &.active {
-      color: var(--primary-light);
+      color: currentColor;
     }
   }
 }
