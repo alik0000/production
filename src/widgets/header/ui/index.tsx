@@ -1,17 +1,15 @@
-import {useTheme} from "app/providers/theme/lib/useTheme";
 import s from "./styles.module.scss";
-import { Navigation } from "features";
+import {Navigation} from "widgets";
+import User from 'widgets/theme-switcher/assets/user.svg'
+import { ThemeSwitcher } from "widgets/theme-switcher/ui";
 
 export const Header = () => {
-    const {theme, toggleTheme} = useTheme()
 
     return (
         <header className={s.header}>
-            <div className={s.logo}></div>
             <Navigation/>
-            <button className={s.button} onClick={toggleTheme}>
-                {theme}
-            </button>
+            <ThemeSwitcher/>
+            <User className={s.avatar}/>
         </header>
     )
 }

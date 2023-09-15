@@ -1,0 +1,23 @@
+.themeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  margin-left: 2.2rem;
+  opacity: 1;
+  transition: .35s ease-in-out;
+  background-color: var(--primary-color);
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--white-color);
+  }
+}

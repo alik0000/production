@@ -1,9 +1,11 @@
 header {
   display: flex;
   align-items: center;
+  column-gap: 1.8rem;
   padding: 1.2rem 3.2rem;
-  height: 8rem;
-  border-bottom: 1px solid var(--element-background-fade);
+  height: var(--height-header);
+  background-color: var(--app-background);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
@@ -13,16 +15,9 @@ header {
   border-radius: 35%;
   background-color: var(--primary);
 }
-
-button {
-  padding: 1.2rem 2.4rem;
-  border: 1px solid var(--primary-light);
-  border-radius: 1.2rem;
-  margin-left: 2.4rem;
-  opacity: 1;
-  transition: .35s ease-in-out;
-
-  &:hover {
-    opacity: 0.8;
-  }
+.avatar {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  color: var(--primary-color);
 }

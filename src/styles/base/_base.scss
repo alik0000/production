@@ -43,20 +43,12 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  &.dark {
-    background-color: var(--primary-dark);
-    color: var(--text-contrast-color);
-  }
-
-  &.light {
-    background: var(--app-background);
-    color: var(--text-color);
-  }
+  background: var(--app-background);
+  color: var(--text-color);
 }
 
 main {
   flex: 1 0 auto;
-  padding-top: $height_header;
+  padding-top: var(--height-header);
   overflow: hidden;
 }

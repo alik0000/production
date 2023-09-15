@@ -12,7 +12,7 @@ nav {
 
     &:hover,
     &.active {
-      color: currentColor;
+      color: var(--text-2-color);
     }
   }
 }
