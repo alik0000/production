@@ -1,13 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 export default function AboutPage() {
+    const { t } = useTranslation('about')
     return(
         <>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, ut!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
-                eius ipsum quaerat quos reiciendis veniam voluptas! Excepturi neque pariatur voluptate.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam asperiores atque dolor
-                fuga laborum necessitatibus nobis perferendis provident quidem?
-            </p>
+            <h2>{t('aboutPage.title')}</h2>
+            <p>{t('aboutPage.text')}</p>
         </>
     )
 }
