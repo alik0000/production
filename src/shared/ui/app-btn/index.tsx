@@ -9,7 +9,7 @@ export const AppBtn:FC<Props> = (props) => {
     const {children, className, ...otherProps} = props
 
     return(
-        <button type="button" className={cn(s.button, {}, [className])} {...otherProps}>
+        <button type="button" className={cn(s.btn, {}, [className])} {...otherProps}>
             {children}
         </button>
     )

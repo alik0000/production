@@ -1,0 +1,15 @@
+.sidebar {
+  display: block;
+  flex-shrink: 0;
+  width: 30rem;
+  height: 100vh;
+  padding: 3.2rem 1.8rem;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  transition: width .35s ease-in-out;
+}
+
+.collapsed {
+  width: 8rem;
+}
+

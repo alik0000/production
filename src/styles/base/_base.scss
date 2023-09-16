@@ -47,8 +47,13 @@ html {
   color: var(--text-color);
 }
 
-main {
+.app-content {
+  display: flex;
+  width: 100%;
   flex: 1 0 auto;
-  padding-top: var(--height-header);
   overflow: hidden;
+}
+
+.main {
+  padding: 3.2rem;
 }
