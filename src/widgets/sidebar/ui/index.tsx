@@ -17,7 +17,7 @@ export const Sidebar:FC = () => {
         setCollapsed(val => !val)
     }
 
-    return(
+    return (
         <div className={cn(s.sidebar, {[s.collapsed]: collapsed})}>
             <div className="content">
                 <AppBtn onClick={toggleCollapsed}>toggle sidebar</AppBtn>
