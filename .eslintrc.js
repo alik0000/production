@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "standard-with-typescript",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:i18next/recommended"
     ],
     "overrides": [
         {
@@ -27,6 +28,7 @@ module.exports = {
     "plugins": [
         "react",
         '@typescript-eslint',
+        "i18next"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
