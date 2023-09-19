@@ -6,10 +6,9 @@
   padding: 3.2rem 1.8rem;
   color: var(--white-color);
   background-color: var(--primary-color);
-  transition: width .35s ease-in-out;
+  transition: width 0.35s ease-in-out;
 }
 
 .collapsed {
   width: 8rem;
 }
-

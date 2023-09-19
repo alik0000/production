@@ -4,12 +4,12 @@
   justify-content: center;
   width: 4rem;
   height: 4rem;
+  margin-left: 2.2rem;
   border: none;
   border-radius: 50%;
-  margin-left: 2.2rem;
+  background-color: var(--white-color);
   opacity: 1;
   transition: .35s ease-in-out;
-  background-color: var(--white-color);
 
   &:hover {
     opacity: 0.8;
