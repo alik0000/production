@@ -1,4 +1,4 @@
-import { cn } from './index'
+import { cn } from 'shared/lib/class-name/index'
 describe('className', () => {
   test('test class', () => {
     expect(cn('class1')).toBe('class1 ')

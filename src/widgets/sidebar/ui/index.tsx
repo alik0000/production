@@ -18,9 +18,9 @@ export const Sidebar: FC = () => {
   }
 
   return (
-        <div className={cn(s.sidebar, { [s.collapsed]: collapsed })}>
+        <div className={cn(s.sidebar, { [s.collapsed]: collapsed })} data-testid={'sidebar'}>
             <div className="content">
-                <AppBtn onClick={toggleCollapsed}>toggle sidebar</AppBtn>
+                <AppBtn onClick={toggleCollapsed} data-testid='toggle-btn'>toggle sidebar</AppBtn>
                 <h2>Sidebar title</h2>
                 <ThemeSwitcher/>
                 <button
