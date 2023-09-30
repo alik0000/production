@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react'
 import s from './styles.module.scss'
-import { AppBtn } from 'shared/ui/button/Button'
+import { Button } from 'shared/ui/button/Button'
 import { cn } from 'shared/lib/class-name'
 import { ThemeSwitcher } from 'widgets/theme-switcher/ui'
 import { useTranslation } from 'react-i18next'
@@ -20,7 +20,7 @@ export const Sidebar: FC = () => {
   return (
         <div className={cn(s.sidebar, { [s.collapsed]: collapsed })} data-testid={'sidebar'}>
             <div className="content">
-                <AppBtn onClick={toggleCollapsed} data-testid='toggle-btn'>toggle sidebar</AppBtn>
+                <Button onClick={toggleCollapsed} data-testid='toggle-btn'>toggle sidebar</Button>
                 <h2>Sidebar title</h2>
                 <ThemeSwitcher/>
                 <button
