@@ -1,6 +1,6 @@
 import { type FC, useState } from 'react'
 import s from './styles.module.scss'
-import { AppBtn } from 'shared/ui/app-btn'
+import { AppBtn } from 'shared/ui/button/Button'
 import { cn } from 'shared/lib/class-name'
 import { ThemeSwitcher } from 'widgets/theme-switcher/ui'
 import { useTranslation } from 'react-i18next'

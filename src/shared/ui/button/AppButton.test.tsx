@@ -1,9 +1,9 @@
-import { AppBtn } from 'shared/ui/app-btn/index'
+import { Button } from 'shared/ui/button/Button'
 import { render } from '@testing-library/react'
 
 describe('app btn', () => {
   test('app button test', () => {
-    const { getByText } = render(<AppBtn>Button test</AppBtn>)
+    const { getByText } = render(<Button>Button test</Button>)
     expect(getByText('Button test')).toBeInTheDocument()
   })
 })
