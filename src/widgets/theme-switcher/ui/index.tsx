@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { FC } from 'react'
 import s from './styles.module.scss'
 import { Button } from 'shared/ui/button/Button'
 import DarkIcon from 'widgets/theme-switcher/assets/dark.svg'

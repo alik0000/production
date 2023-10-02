@@ -1,23 +1,66 @@
+@use "../../../styles/utils/hover" as mixin;
+
 .button {
-
-}
-
-.clear {
   margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
-}
 
-.primary {
-  padding: 1.2rem 2.4rem;
-  border-radius: 12rem;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-}
-.primary-light {
-  padding: 1.2rem 2.4rem;
-  border-radius: 12rem;
-  background-color: var(--primary-light-color);
-  color: var(--text-color);
+  &__fab {
+    width: 4.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 1.6rem;
+  }
+
+  &__contrast {
+    border-color: var(--element-background);
+    transition: 0.35s var(--easeDefault);
+    color: var(--text-contrast-color);
+    transition-property: background-color, color, border-color;
+
+    @include mixin.hover {
+      color: var(--primary-color);
+      background-color: var(--element-background);
+    }
+  }
+
+  &__primary {
+    background-color: var(--primary-color);
+    color: var(--text-contrast-color);
+    transition: 0.35s var(--easeDefault);
+    transition-property: color, background-color;
+
+    @include mixin.hover {
+      background-color: var(--primary-active-color);
+    }
+  }
+
+  &__secondary {
+    background-color: var(--element-background);
+    transition: 0.35s var(--easeDefault);
+    transition-property: color, background-color;
+    color: var(--text-2-color);
+
+    @include mixin.hover {
+      color: var(--primary-color);
+    }
+  }
+
+  &__outlined {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-2-color);
+    transition: 0.35s var(--easeDefault);
+    transition-property: color, background-color, border-color;
+
+    @include mixin.hover {
+      color: var(--text-contrast-color);
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
 }

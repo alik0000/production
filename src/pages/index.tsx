@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { routConfig } from 'shared/config'
 

@@ -47,7 +47,8 @@ module.exports = {
         'react/require-default-props': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
-        'react/no-deprecated': 'off'
+        'react/no-deprecated': 'off',
+        '@typescript-eslint/consistent-type-imports': 'off',
     },
     globals: {
         __IS_DEV__: true,

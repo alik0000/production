@@ -1,5 +1,5 @@
-import { type FC, useState } from 'react'
-import s from './styles.module.scss'
+import { FC, useState } from 'react'
+import s from 'widgets/sidebar/ui/styles.module.scss'
 import { Button } from 'shared/ui/button/Button'
 import { cn } from 'shared/lib/class-name'
 import { ThemeSwitcher } from 'widgets/theme-switcher/ui'

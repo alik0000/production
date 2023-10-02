@@ -1,6 +1,6 @@
-import { type FC, type ReactNode } from 'react'
+import { FC, type ReactNode } from 'react'
 import { cn } from 'shared/lib/class-name'
-import { type LinkProps, Link } from 'react-router-dom'
+import { LinkProps, Link } from 'react-router-dom'
 
 interface AppLinkProps extends LinkProps {
   children: ReactNode

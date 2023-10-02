@@ -1,5 +1,5 @@
 // для тестирования svg компонентов
-import { type FC } from 'react'
+import { FC } from 'react'
 
 const SvgComponent: FC = () => {
   return (

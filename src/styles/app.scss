@@ -4,13 +4,13 @@
 // ==
 // 1 - import utils
 // ==
-@import 'styles/utils/_colors.scss',
-'styles/utils/_global.scss',
-'styles/utils/_variables.scss';
+@import 'utils/colors',
+'utils/variables',
+'utils/hover';
 
 
 // ==
 // 2 - import base styles
 // ==
-@import 'styles/base/_base.scss',
-'styles/base/_reset.scss';
+@import 'base/base',
+'base/reset';

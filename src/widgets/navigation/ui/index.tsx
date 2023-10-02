@@ -1,7 +1,7 @@
 import s from './styles.module.scss'
 import { NavLink } from 'react-router-dom'
 import { AppRoutes, RoutePaths } from 'shared/config'
-import { type FC } from 'react'
+import { FC } from 'react'
 
 export const Navigation: FC = () => {
   return (

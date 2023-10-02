@@ -44,7 +44,7 @@ html {
   overflow-x: hidden;
   color: var(--text-color);
   font-size: 1.6rem;
-  font-family: $font-family-main;
+  font-family: var(--font-family-main);
   background: var(--app-background);
 }
 

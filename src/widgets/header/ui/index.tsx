@@ -1,7 +1,7 @@
 import s from './styles.module.scss'
 import { Navigation } from 'widgets'
 import User from 'widgets/theme-switcher/assets/user.svg'
-import { type FC } from 'react'
+import { FC } from 'react'
 
 export const Header: FC = () => {
   return (
