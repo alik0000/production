@@ -15,9 +15,10 @@ export interface AsReactType<T extends ElementType> {
 
 export type InvalidStateColor = 'warning' | 'danger'
 export type StateColor = 'success' | InvalidStateColor
-export type SemanticColor = StateColor | 'accent' | 'primary' | 'secondary'
+export type SemanticColor = StateColor | 'accent' | 'primary' | 'secondary' | 'contrast'
 export type ButtonColor = SemanticColor | 'black' | 'white'
 export type ButtonSize = 'small' | 'medium' | 'large' | 'relative'
+export type ButtonShape = 'pill' | 'brick'
 
 export interface LocalButtonProps {
   /** Manually apply the active styles; this does not affect :active */
@@ -37,6 +38,7 @@ export interface LocalButtonProps {
   loading?: boolean
   onClick?: (event: MouseEvent | KeyboardEvent | TouchEvent) => void
   size?: ButtonSize
+  shape?: ButtonShape
   style?: CSSProperties
   type?: 'button' | 'submit'
 }

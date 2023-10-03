@@ -1,3 +1,6 @@
+import 'styles/utils/breakpoints.scss'
+import 'styles/utils/hover.scss'
+import 'styles/base/typography.scss'
 import {
   ReactElement,
   MouseEvent,
@@ -21,7 +24,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     children,
     className,
     color,
-    disabled = false,
+    disabled: initDisabled = false,
     focused = false,
     hovered = false,
     href,
@@ -29,6 +32,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     loader,
     loading = false,
     onClick,
+    shape = 'pill',
     size = 'medium',
     type = 'button',
     ...props
@@ -36,6 +40,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
 ): ReactElement {
   // if an href is passed we should ignore the `as` and force to an anchor
   const element = href ? 'a' : imitation ? 'div' : 'button'
+  const disabled = !!(initDisabled || loading)
 
   const handleClick = (event: MouseEvent | KeyboardEvent | TouchEvent): void => {
     if (!disabled && !loading) {
@@ -43,11 +48,11 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     }
   }
   const mod = {
-    'is-active': active,
-    'is-disabled': disabled,
-    'is-focused': focused,
-    'is-hovered': hovered,
-    'is-loading': loading
+    [s['is-active']]: active,
+    [s['is-disabled']]: disabled,
+    [s['is-focused']]: focused,
+    [s['is-hovered']]: hovered,
+    [s['is-loading']]: loading
   }
 
   const elementProps = (() => {
@@ -55,7 +60,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
 
     switch (element) {
       case 'a': {
-        const elementProps = {} as any as HTMLProps<HTMLAnchorElement>
+        const elementProps = {} as HTMLProps<HTMLAnchorElement>
         elementProps.onKeyDown = (event: KeyboardEvent<HTMLAnchorElement>) => {
           if (disabled && event.key === 'Enter') {
             event.preventDefault()
@@ -66,14 +71,14 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
       }
 
       case 'button': {
-        const elementProps = {} as any as HTMLProps<HTMLButtonElement>
+        const elementProps = {} as HTMLProps<HTMLButtonElement>
         elementProps.type = type
         elementProps.disabled = disabled
         return elementProps
       }
 
       default: {
-        const elementProps = {} as any as HTMLProps<HTMLElement>
+        const elementProps = {} as HTMLProps<HTMLElement>
         elementProps.role = 'button'
         elementProps.tabIndex = 0
 
@@ -94,12 +99,15 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     createElement(
       element,
       {
-        className: cn(s.button, mod, [s[`button__${color}`], s[`button__${size}`]]),
+        className: cn(
+          s.button, mod,
+          [s[color ?? ''], s[size], s[shape]]
+        ),
         onClick: handleClick,
-        ...({ elementProps, ...props as HTMLAttributes<T> })
+        ...({ ...elementProps, ...props as HTMLAttributes<T> })
       },
           <Fragment>
-            <span>{children}</span>
+            {children && <span>{children}</span>}
             {loading && <span>{loader}</span>}
           </Fragment>
     )

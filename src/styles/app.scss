@@ -6,11 +6,13 @@
 // ==
 @import 'utils/colors',
 'utils/variables',
-'utils/hover';
+'utils/hover',
+'utils/breakpoints';
 
 
 // ==
 // 2 - import base styles
 // ==
 @import 'base/base',
-'base/reset';
+'base/reset',
+'base/typography';

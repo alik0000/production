@@ -1,0 +1,132 @@
+@import "styles/utils/breakpoints.scss";
+
+// --
+// headings
+// ==
+.hl {
+  font-weight: 700;
+  font-size: 5.4rem;
+  line-height: 6.8rem;
+
+  @include --tablet {
+    font-size: 4.2rem;
+    line-height: 5.8rem;
+  }
+
+  @include --mobile-lg {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+}
+
+.h1 {
+  font-size: 4rem;
+  line-height: 5.6rem;
+
+  @include --mobile-lg {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+}
+
+.h2 {
+  font-size: 3.2rem;
+  line-height: 4.4rem;
+
+  @include --mobile-lg {
+    font-size: 2rem;
+    line-height: 2.6rem;
+  }
+}
+
+.h3 {
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+
+  @include --mobile-lg {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+}
+
+.h4 {
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+
+  @include --mobile-lg {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}
+
+.h5 {
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+
+  @include --mobile-lg {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}
+
+.text {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+
+  @include --mobile-lg {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+}
+
+.text-md {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2rem;
+
+  @include --mobile-lg {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+.text-sm {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+
+  @include --mobile-lg {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
+
+.text-ssm {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.text-lg {
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+
+  @include --mobile-lg {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}
+
+.text-lead {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+
+  @include --tablet {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  @include --mobile-lg {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+}
+

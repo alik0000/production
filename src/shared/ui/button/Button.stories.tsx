@@ -1,8 +1,9 @@
-import React from 'react'
+import { action } from '@storybook/addon-actions'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { ButtonProps } from 'shared/ui/button/types'
 import { Button } from 'shared/ui/button/Button'
+import SpinnerIcon from 'shared/assets/spinner.svg'
 
 export default {
   title: 'shared/Button',
@@ -152,7 +153,9 @@ export default {
 
 const Template: ComponentStory<(args: ButtonProps) =>
 ReturnType<typeof Button>> = ({ children, size, ...args }) => (
-    <Button {...args}>
+    <Button {...args} size={size}
+            loader={<SpinnerIcon/>}
+            onClick={action('clicked')}>
       {children}
     </Button>
 )
@@ -160,14 +163,14 @@ ReturnType<typeof Button>> = ({ children, size, ...args }) => (
 const defaultArgs = {
   active: false,
   as: 'button' as ButtonProps['as'],
-  children: 'Click me',
-  color: 'primary' as ButtonProps['color'],
+  children: 'button',
   contrast: false,
   disabled: false,
   focused: false,
   fullWidth: false,
   hovered: false,
   imitation: false,
+  shape: 'pill',
   loading: false,
   noHeight: false,
   noPadding: false,
@@ -181,36 +184,70 @@ Default.args = {
 }
 
 export const PrimaryColor = Template.bind({})
-PrimaryColor.storyName = 'Color: Primary'
+PrimaryColor.storyName = 'Primary'
 PrimaryColor.args = {
   ...defaultArgs,
   color: 'primary'
 }
 
 export const SuccessColor = Template.bind({})
-SuccessColor.storyName = 'Color: Success'
+SuccessColor.storyName = 'Success'
 SuccessColor.args = {
   ...defaultArgs,
   color: 'success'
 }
 
-export const SecondaryColor = Template.bind({})
-SecondaryColor.storyName = 'Color: secondary'
-SecondaryColor.args = {
-  ...defaultArgs,
-  color: 'secondary'
-}
-
 export const WarningColor = Template.bind({})
-WarningColor.storyName = 'Color: Warning'
+WarningColor.storyName = 'Warning'
 WarningColor.args = {
   ...defaultArgs,
   color: 'warning'
 }
 
 export const DangerColor = Template.bind({})
-DangerColor.storyName = 'Color: Danger'
+DangerColor.storyName = 'Danger'
 DangerColor.args = {
   ...defaultArgs,
   color: 'danger'
+}
+export const ContrastColor = Template.bind({})
+ContrastColor.storyName = 'Contrast'
+ContrastColor.args = {
+  ...defaultArgs,
+  color: 'contrast'
+}
+
+export const SecondaryColor = Template.bind({})
+SecondaryColor.storyName = 'Secondary'
+SecondaryColor.args = {
+  ...defaultArgs,
+  color: 'secondary'
+}
+
+export const Link = (args: ButtonProps<'a'>): ReturnType<typeof Button> => <Button<'a'> {...args} />
+Link.args = {
+  ...defaultArgs,
+  as: 'a',
+  href: 'https://www.google.com/',
+  target: '_blank'
+}
+
+Link.argTypes = {
+  href: { table: { disable: false } },
+  target: { table: { disable: false } }
+}
+
+export const Imitation = (args: ButtonProps<'div'>): ReturnType<typeof Button> => <Button<'div'> {...args} />
+Imitation.args = {
+  ...defaultArgs,
+  as: 'div',
+  imitation: true
+}
+
+export const LoadingState = Template.bind({})
+LoadingState.storyName = 'Loading'
+LoadingState.args = {
+  ...defaultArgs,
+  loading: true,
+  children: ''
 }
