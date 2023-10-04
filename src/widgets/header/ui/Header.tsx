@@ -1,6 +1,6 @@
-import s from './styles.module.scss'
-import { Navigation } from 'widgets'
-import User from 'widgets/theme-switcher/assets/user.svg'
+import s from './Header.module.scss'
+import { Navigation } from 'widgets/navigation'
+import User from 'shared/assets/user.svg'
 import { FC } from 'react'
 
 export const Header: FC = () => {

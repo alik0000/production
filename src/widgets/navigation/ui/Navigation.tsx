@@ -1,4 +1,4 @@
-import s from './styles.module.scss'
+import s from './Navigation.module.scss'
 import { NavLink } from 'react-router-dom'
 import { AppRoutes, RoutePaths } from 'shared/config'
 import { FC } from 'react'

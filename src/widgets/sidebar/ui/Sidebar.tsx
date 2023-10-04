@@ -1,8 +1,8 @@
 import { FC, useState } from 'react'
-import s from 'widgets/sidebar/ui/styles.module.scss'
+import s from 'widgets/sidebar/ui/Sidebar.module.scss'
 import { Button } from 'shared/ui/button/Button'
 import { cn } from 'shared/lib/class-name'
-import { ThemeSwitcher } from 'widgets/theme-switcher/ui'
+import { ThemeSwitcher } from 'shared/ui/theme-switcher/ui/ThemeSwitcher'
 import { useTranslation } from 'react-i18next'
 
 type Languages = Record<string, string>

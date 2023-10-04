@@ -49,6 +49,7 @@ module.exports = {
         'no-shadow': 'off',
         'react/no-deprecated': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
+        "react/display-name": "off",
     },
     globals: {
         __IS_DEV__: true,

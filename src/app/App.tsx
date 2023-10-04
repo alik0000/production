@@ -1,9 +1,9 @@
 import { Router } from 'pages'
 import { FC, Suspense, useContext } from 'react'
 import { ThemeContext } from './providers/theme/lib/ThemeContext'
-import { Header } from 'widgets'
+import { Header } from 'widgets/header'
+import { Sidebar } from 'widgets/sidebar'
 import { cn } from 'shared/lib/class-name'
-import { Sidebar } from 'widgets/sidebar/ui/Sidebar'
 
 export const App: FC = () => {
   const { theme } = useContext(ThemeContext)
