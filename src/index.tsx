@@ -5,10 +5,11 @@ import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'app/providers/ui/ThemeProvider'
 import 'shared/config/i18n/i18n'
 import { Suspense } from 'react'
+import { PageLoader } from 'widgets/pag-loader'
 
 render(
     <BrowserRouter>
-        <Suspense fallback={'...changing language'}>
+        <Suspense fallback={<PageLoader/>}>
             <ThemeProvider>
                 <App/>
             </ThemeProvider>

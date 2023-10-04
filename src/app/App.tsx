@@ -4,6 +4,7 @@ import { ThemeContext } from './providers/theme/lib/ThemeContext'
 import { Header } from 'widgets/header'
 import { Sidebar } from 'widgets/sidebar'
 import { cn } from 'shared/lib/class-name'
+import { PageLoader } from 'widgets/pag-loader'
 
 export const App: FC = () => {
   const { theme } = useContext(ThemeContext)
@@ -14,7 +15,7 @@ export const App: FC = () => {
             <div className="app-content">
                 <Sidebar/>
                 <div className="main">
-                    <Suspense fallback={<h2>Loading...</h2>}>
+                    <Suspense fallback={<PageLoader />}>
                         <Router/>
                     </Suspense>
                 </div>
