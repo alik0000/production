@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { routConfig } from 'shared/config'
+import { routConfig } from 'shared/config/routes'
 
 export const Router: FC = () => {
   return (

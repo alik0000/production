@@ -32,7 +32,8 @@ module.exports = {
     "plugins": [
         "react",
         '@typescript-eslint',
-        "i18next"
+        "i18next",
+        "react-hooks"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
@@ -50,6 +51,8 @@ module.exports = {
         'react/no-deprecated': 'off',
         '@typescript-eslint/consistent-type-imports': 'off',
         "react/display-name": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
     },
     globals: {
         __IS_DEV__: true,

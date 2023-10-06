@@ -1,6 +1,6 @@
-import 'styles/utils/breakpoints.scss'
-import 'styles/utils/hover.scss'
-import 'styles/base/typography.scss'
+import 'app/styles/utils/breakpoints.scss'
+import 'app/styles/utils/hover.scss'
+import 'app/styles/base/typography.scss'
 import {
   ReactElement,
   MouseEvent,
@@ -48,11 +48,11 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     }
   }
   const mod = {
-    [s['is-active']]: active,
-    [s['is-disabled']]: disabled,
-    [s['is-focused']]: focused,
-    [s['is-hovered']]: hovered,
-    [s['is-loading']]: loading
+    [s.isActive]: active,
+    [s.isDisabled]: disabled,
+    [s.isFocused]: focused,
+    [s.isHovered]: hovered,
+    [s.isLoading]: loading
   }
 
   const elementProps = (() => {

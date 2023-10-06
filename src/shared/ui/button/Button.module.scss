@@ -1,6 +1,6 @@
-@import "styles/utils/hover.scss";
-@import "styles/base/typography.scss";
-@import "styles/utils/breakpoints.scss";
+@import "app/styles/utils/hover.scss";
+@import "app/styles/base/typography.scss";
+@import "app/styles/utils/breakpoints.scss";
 
 .button {
   width: fit-content;
@@ -9,7 +9,7 @@
   border: 0;
   background: transparent;
   opacity: 1;
-  transition: 0.35s var(--easeDefault);
+  transition: 0.35s var(--ease-default);
   transition-property: color, background-color, outline, border-color, opacity;
 
   svg {
@@ -55,7 +55,7 @@
 .pill {
   border-radius: 2.4rem;
 }
-.is-disabled {
+.isDisabled {
   background-color: var(--disabled-color);
 }
 .brick {
