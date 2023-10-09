@@ -49,8 +49,7 @@
 }
 .outlined {
   background-color: transparent;
-  color: var(--text-color);
-  border: 1px solid var(--text-2-color);
+  border: 1px solid currentColor;
 }
 .pill {
   border-radius: 2.4rem;
@@ -69,4 +68,7 @@
 }
 .large {
   composes: text-lg;
+}
+.white {
+  color: var(--white-color)
 }

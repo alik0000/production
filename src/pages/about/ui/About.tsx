@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-export default function AboutPage (): JSX.Element {
+export default function About (): JSX.Element {
   const { t } = useTranslation('about')
   return (
         <>

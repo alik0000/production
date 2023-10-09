@@ -19,6 +19,8 @@
   --disabled-color: #A0A0A0;
   --element-disabled-color: #d3d7e0;
   --overlay: rgba(0, 0, 0, 0.6);
+  --scrollbar-color: #2E3146;
+  --scrollbar-area-color: rgba(46, 49, 70, 0.1);
 }
 
 .app.dark {
@@ -30,4 +32,6 @@
   --text-2-color: #b2b2b2;
   --text-blind-color: #C0C6D1;
   --text-contrast-color: #000000;
+  --scrollbar-color: rgb(28, 80, 96);
+  --scrollbar-area-color: rgba(28, 80, 96, 0.42);
 }

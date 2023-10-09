@@ -15,6 +15,7 @@ export interface AsReactType<T extends ElementType> {
 
 export type InvalidStateColor = 'warning' | 'danger'
 export type StateColor = 'success' | InvalidStateColor
+export type ButtonWeight = 'solid' | 'shaded' | 'outlined' | 'ghost' | 'inline'
 export type SemanticColor = StateColor | 'accent' | 'primary' | 'secondary' | 'contrast'
 export type ButtonColor = SemanticColor | 'black' | 'white'
 export type ButtonSize = 'small' | 'medium' | 'large' | 'relative'
@@ -40,6 +41,7 @@ export interface LocalButtonProps {
   size?: ButtonSize
   shape?: ButtonShape
   style?: CSSProperties
+  weight?: ButtonWeight
   type?: 'button' | 'submit'
 }
 

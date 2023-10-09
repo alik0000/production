@@ -1,14 +1,55 @@
-.sidebar {
+@import "shared/ui/button/Button.module.scss";
+.wrapper {
+  position: relative;
   display: block;
   flex-shrink: 0;
   width: 30rem;
-  height: 100vh;
-  padding: 3.2rem 1.8rem;
+  height: 100%;
+  padding: 5.4rem 1.8rem 1.8rem;
   color: var(--white-color);
   background-color: var(--primary-color);
   transition: width 0.35s ease-in-out;
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
 .collapsed {
-  width: 8rem;
+  width: 11.5rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  row-gap: 2.4rem;
+}
+
+.toggle {
+  composes: button outlined white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 50%;
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    transform: translate(-2px, 1px) scale(1.25);
+    transition: transform;
+  }
+}
+
+.isVisible svg {
+  transform: translate(2px, 1px) scale(-1.25);
 }

@@ -1,6 +1,6 @@
 import { RouteProps } from 'react-router-dom'
-import { MainPage } from 'pages/main'
-import { AboutPage } from 'pages/about'
+import { Main } from 'pages/main'
+import { About } from 'pages/about'
 import { NotFound } from 'pages/not-found'
 
 export enum AppRoutes {
@@ -18,11 +18,11 @@ export const RoutePaths: Record<AppRoutes, string> = {
 export const routConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePaths.main,
-    element: <MainPage/>
+    element: <Main/>
   },
   [AppRoutes.ABOUT]: {
     path: RoutePaths.about,
-    element: <AboutPage/>
+    element: <About/>
   },
   [AppRoutes.NOTFOUND]: {
     path: RoutePaths['not-found'],

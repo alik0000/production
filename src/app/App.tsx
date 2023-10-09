@@ -1,5 +1,5 @@
 import { Router } from 'pages'
-import { FC, Suspense, useCallback, useContext, useState } from 'react'
+import { FC, Suspense, useContext, useState } from 'react'
 import { ThemeContext } from './providers/theme/lib/ThemeContext'
 import { Header } from 'widgets/header'
 import { Sidebar } from 'widgets/sidebar'
