@@ -6,12 +6,20 @@ import {
   MouseEvent,
   KeyboardEvent,
   TouchEvent,
-  CSSProperties
+  CSSProperties,
+  ComponentPropsWithoutRef
 } from 'react'
 
 export interface AsReactType<T extends ElementType> {
   as?: T | ((props: any) => ReactElement<any, T>)
 }
+
+// see https://github.com/microsoft/TypeScript/issues/36860 for css, sx removal notes
+export type MergeElementPropsWithoutRef<T extends ElementType, P extends object> = Omit<
+ComponentPropsWithoutRef<T>,
+keyof P | 'css' | 'sx'
+> &
+P
 
 export type InvalidStateColor = 'warning' | 'danger'
 export type StateColor = 'success' | InvalidStateColor
@@ -45,5 +53,6 @@ export interface LocalButtonProps {
   type?: 'button' | 'submit'
 }
 
-export type ButtonProps<T extends ButtonElementType = 'button'> = AsReactType<T> & LocalButtonProps
+export type ButtonProps<T extends ButtonElementType = 'button'> = AsReactType<T> &
+MergeElementPropsWithoutRef<T, LocalButtonProps>
 export type ButtonElementType = Extract<keyof JSX.IntrinsicElements, 'button' | 'a' | 'div' | 'span'>

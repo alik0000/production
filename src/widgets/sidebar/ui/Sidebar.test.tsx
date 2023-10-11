@@ -1,6 +1,6 @@
 import { Sidebar } from './Sidebar'
 import { fireEvent, screen } from '@testing-library/react'
-import { RenderWithTranslation } from 'shared/lib/renderWithTranslation/RenderWithTranslation'
+import { RenderWithTranslation } from 'shared/lib/tests/renderWithTranslation/RenderWithTranslation'
 describe('sidebar test', () => {
   test('test component ', () => {
     RenderWithTranslation(<Sidebar/>)

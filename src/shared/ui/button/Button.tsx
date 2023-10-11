@@ -8,7 +8,8 @@ import {
   Ref,
   createElement,
   HTMLAttributes,
-  Fragment
+  Fragment,
+  ForwardedRef
 } from 'react'
 import { cn } from 'shared/lib/class-name'
 import s from 'shared/ui/button/Button.module.scss'
@@ -34,7 +35,8 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     size = 'medium',
     type = 'button',
     ...props
-  }: ButtonProps<T>
+  }: ButtonProps<T>,
+  forwardedRef: ForwardedRef<HTMLElementTagNameMap[T]>
 ): ReactElement {
   // if an href is passed we should ignore the `as` and force to an anchor
   const element = href ? 'a' : imitation ? 'div' : 'button'
@@ -50,7 +52,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     [s.isDisabled]: disabled,
     [s.isFocused]: focused,
     [s.isHovered]: hovered,
-    [s.isLoading]: loading,
+    [s.isLoading]: loading
   }
 
   const elementProps = (() => {
@@ -101,6 +103,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
           s.button, mod,
           [s[color ?? ''], s[size], s[shape], s[weight], s[className ?? '']]
         ),
+        ref: forwardedRef,
         onClick: handleClick,
         ...({ ...elementProps, ...props as HTMLAttributes<T> })
       },

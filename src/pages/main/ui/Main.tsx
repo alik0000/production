@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Counter } from 'entities/Counter'
 export default function Main (): JSX.Element {
   const { t } = useTranslation('main')
 
@@ -7,7 +8,7 @@ export default function Main (): JSX.Element {
             <h2>{t('mainPage.title')}</h2>
             <p>{t('mainPage.text')}</p>
             <br/>
-            <br/>
+            <Counter/>
             <br/>
             <p>{t('mainPage.text')}</p>
             <p>{t('mainPage.text')}</p>
