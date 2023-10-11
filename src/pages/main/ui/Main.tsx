@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Counter } from 'entities/Counter/ui/Counter'
+import { Counter } from 'entities/Counter'
 export default function Main (): JSX.Element {
   const { t } = useTranslation('main')
 

@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux'
 import { ReactNode } from 'react'
 import { createReduxStore } from '../config/createReduxStore'
-import { SchemaStore } from 'app/providers/store/config/createReduxStore'
+import { SchemaStore } from 'app/providers/store/types/SchemaStore'
 
 interface Props {
   children: ReactNode

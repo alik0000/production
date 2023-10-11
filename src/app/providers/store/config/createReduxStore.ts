@@ -1,12 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { counterReducer, CounterSchema } from 'entities/Counter/modal/counterSlice'
-
-export interface SchemaStore {
-  counter: CounterSchema
-}
-
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const createReduxStore = (initials?: SchemaStore) => {
+import { configureStore, EnhancedStore } from '@reduxjs/toolkit'
+import { counterReducer } from 'entities/Counter'
+import { SchemaStore } from '../types/SchemaStore'
+export const createReduxStore = (initials?: SchemaStore): EnhancedStore => {
   return configureStore<SchemaStore>({
     reducer: {
       counter: counterReducer
