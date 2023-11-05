@@ -5,7 +5,7 @@
 .button {
   width: fit-content;
   margin: 0;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 1.4rem;
   border: 0;
   background: transparent;
   opacity: 1;
@@ -71,4 +71,14 @@
 }
 .white {
   color: var(--white-color)
+}
+.left {
+  margin-right: auto;
+}
+.right {
+  margin-left: auto;
+}
+.center {
+  margin-right: auto;
+  margin-left: auto;
 }

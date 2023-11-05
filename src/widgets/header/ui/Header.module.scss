@@ -1,6 +1,7 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: var(--height-header);
   padding: 1.2rem 3.2rem;
   border-bottom: 1px solid var(--border-color);
@@ -21,5 +22,4 @@
   width: 4rem;
   height: 4rem;
   color: var(--primary-color);
-  margin-left: auto;
 }

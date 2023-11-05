@@ -1,3 +1,3 @@
 export { Counter } from './ui/Counter'
-export { counterReducer } from './modal/slice/counterSlice'
-export type { CounterSchema } from './modal/types/CounterSchema'
+export { counterReducer } from './model/slice/counterSlice'
+export type { CounterSchema } from './model/types/CounterSchema'

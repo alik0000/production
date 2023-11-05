@@ -9,7 +9,7 @@ import {
   createElement,
   HTMLAttributes,
   Fragment,
-  ForwardedRef
+  ForwardedRef, useMemo
 } from 'react'
 import { cn } from 'shared/lib/class-name'
 import s from 'shared/ui/button/Button.module.scss'
@@ -27,6 +27,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     hovered = false,
     href,
     imitation = false,
+    align,
     loader,
     loading = false,
     onClick,
@@ -54,6 +55,16 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
     [s.isHovered]: hovered,
     [s.isLoading]: loading
   }
+
+  const additionalClasses = useMemo(() => {
+    const cls: string[] = []
+    for (const attr of [color, size, shape, align, weight, className]) {
+      if (attr && s[attr]) {
+        cls.push(s[attr])
+      }
+    }
+    return cls
+  }, [color, size, shape, align, weight, className])
 
   const elementProps = (() => {
     if (imitation) return {}
@@ -100,8 +111,7 @@ export function ButtonBase<T extends ButtonElementType = 'button'> (
       element,
       {
         className: cn(
-          s.button, mod,
-          [s[color ?? ''], s[size], s[shape], s[weight], s[className ?? '']]
+          s.button, mod, additionalClasses
         ),
         ref: forwardedRef,
         onClick: handleClick,

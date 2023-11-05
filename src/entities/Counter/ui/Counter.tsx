@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { counterActions } from '../modal/slice/counterSlice'
-import { getCounterValue } from '../modal/selectros/getCounterValue/getCounterValue'
+import { counterActions } from '../model/slice/counterSlice'
+import { getCounterValue } from '../model/selectros/getCounterValue/getCounterValue'
 
 export const Counter = (): JSX.Element => {
   const value = useSelector(getCounterValue)

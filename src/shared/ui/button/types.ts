@@ -21,6 +21,7 @@ keyof P | 'css' | 'sx'
 > &
 P
 
+export type ButtonAlignment = 'left' | 'right' | 'center';
 export type InvalidStateColor = 'warning' | 'danger'
 export type StateColor = 'success' | InvalidStateColor
 export type ButtonWeight = 'solid' | 'shaded' | 'outlined' | 'ghost' | 'inline'
@@ -35,6 +36,7 @@ export interface LocalButtonProps {
   children: ReactChild | ReactFragment
   className?: string
   color?: ButtonColor
+  align?: ButtonAlignment
   disabled?: boolean
   /** Manually apply the focus styles; this does not affect :focus */
   focused?: boolean
