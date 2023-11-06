@@ -6,6 +6,17 @@ import { fireEvent, screen } from '@testing-library/react'
 const initials: SchemaStore = {
   counter: {
     value: 88
+  },
+  user: {
+    user: {
+      name: 'someone',
+      password: '4234'
+    }
+  },
+  login: {
+    username: 'someone else',
+    password: '132kl',
+    loading: false
   }
 }
 describe('<Counter />', () => {
