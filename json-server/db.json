@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "id": "3123123",
-      "username": "ali",
+      "username": "user1",
       "password": "222",
-      "role": "admin"
+      "email": "user1@user.user",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"
     }
   ],
   "posts": [

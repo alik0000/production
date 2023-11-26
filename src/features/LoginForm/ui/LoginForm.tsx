@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react'
+import { FC, FormEvent, useCallback, useEffect } from 'react'
 import { Input } from 'shared/ui/input/Input'
 import { useTranslation } from 'react-i18next'
 import s from './LoginForm.module.scss'
@@ -7,11 +7,15 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getLoginValue } from '../model/selectors/getLoginValues/getLoginValue'
 import { loginActions } from '../model/slice/loginSlice'
 import { loginAsyncThunk } from '../model/services/login/login'
+import { loggedIn } from 'entities/User'
+import { useNavigate } from 'react-router-dom'
 
 export const LoginForm: FC = () => {
   const { t } = useTranslation('auth')
   const dispatch = useDispatch()
-  const { username, password } = useSelector(getLoginValue)
+  const navigate = useNavigate()
+  const { email, password, error } = useSelector(getLoginValue)
+  const isLoggedIn = useSelector(loggedIn)
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.changeUsername(value))
@@ -21,17 +25,33 @@ export const LoginForm: FC = () => {
     dispatch(loginActions.changePassword(value))
   }, [dispatch])
 
-  const onClickLogin = useCallback(() => {
-    dispatch(loginAsyncThunk({ username, password }))
-  }, [dispatch, username, password])
+  const onSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    dispatch(loginAsyncThunk({ email, password }))
+  }, [dispatch, email, password])
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/')
+    }
+  }, [navigate, isLoggedIn])
 
   return (
-        <form className={s.form}>
+        <form className={s.form} onSubmit={onSubmit}>
             <div className={s.fields}>
-                <Input name='login-username' onChange={onChangeUsername} value={username} placeholder='Введите логин'/>
-                <Input type='password' onChange={onChangePassword} name='login-password' value={password} placeholder='Введите пароль'/>
+                <Input
+                    type='email' name='login-email'
+                    onChange={onChangeUsername}
+                    value={email} placeholder='Введите email'
+                    errorMessage={error}
+                />
+                <Input
+                    type='password' onChange={onChangePassword}
+                    name='login-password' value={password} placeholder='Введите пароль'
+                    errorMessage={error}
+                />
             </div>
-            <Button type='button' onClick={onClickLogin} color='primary' shape='brick' align='right'>{ t('login.enter') }</Button>
+            <Button type='submit' color='primary' shape='brick' align='right'>{ t('login.enter') }</Button>
         </form>
   )
 }

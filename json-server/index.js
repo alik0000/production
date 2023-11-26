@@ -20,9 +20,9 @@ server.use(async (req, res, next) => {
 const { users, posts } = JSON.parse(fs.readFileSync(pathToDataBase, 'UTF-8'))
 server.post('/login', (req, res) => {
   try {
-    const { username, password } = req.body
+    const { email, password } = req.body
     const userFromBd = users.find(
-      (user) => user.username === username && user.password === password
+      (user) => user.email === email && user.password === password
     )
 
     if (userFromBd) {
@@ -56,5 +56,5 @@ server.use((req, res, next) => {
 
 // запуск сервера
 server.listen(8000, () => {
-  console.log('server is running on 3000 port')
+  console.log('server is running on 8000 port')
 })

@@ -1,23 +1,29 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { User } from 'entities/User/model/types/UserSchema'
+import { userActions } from 'entities/User'
 
 interface LoginProps {
-  username: string
+  email: string
   password: string
 }
 export const loginAsyncThunk = createAsyncThunk<User, LoginProps, { rejectValue: string }>(
   'users/fetchByIdStatus',
-  async (authData, thunkAPI) => {
+  async (authData, { rejectWithValue, dispatch }) => {
     try {
       const { data } = await axios.post('http://localhost:8000/login', authData)
       if (!data) {
-        throw new Error()
+        throw new Error('Ошибка')
       }
+
+      if (data.token) {
+        localStorage.setItem('token', JSON.stringify(data.token))
+      }
+      localStorage.setItem('userData', JSON.stringify(data))
+      dispatch(userActions.setAuthData(data))
       return data
     } catch (err) {
-      console.log(err)
-      thunkAPI.rejectWithValue('Ошибка')
+      return rejectWithValue(err?.message)
     }
   }
 )
