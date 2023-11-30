@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Sidebar } from 'widgets/sidebar'
+import { Sidebar } from './Sidebar'
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from 'app/providers/theme/lib/ThemeContext'
 

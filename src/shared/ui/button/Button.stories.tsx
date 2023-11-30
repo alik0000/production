@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ButtonProps } from 'shared/ui/button/types'
-import { Button } from 'shared/ui/button/Button'
-import SpinnerIcon from 'shared/assets/spinner.svg'
+import { ButtonProps } from './types'
+import { Button } from './Button'
+import SpinnerIcon from '../../assets/spinner.svg'
 
 export default {
   title: 'shared/Button',

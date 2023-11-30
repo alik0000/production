@@ -12,7 +12,7 @@
 
   &:has(svg) {
     input {
-      padding-left: 3.2rem;
+      padding-left: 4rem;
     }
   }
 }
@@ -30,10 +30,10 @@
 
 .svg {
   position: absolute;
-  top: 1.2rem;
-  left: 0.6rem;
-  width: 1.6rem;
-  height: 1.6rem;
+  top: 1rem;
+  left: 0.8rem;
+  width: 2.2rem;
+  height: 2.2rem;
   color: currentColor;
 }
 
@@ -53,7 +53,7 @@
     box-shadow: 0 0 0 1000px transparent inset;
 
     :focus {
-      box-shadow: 0 0 0px 1000px transparent inset;
+      box-shadow: 0 0 0 1000px transparent inset;
     }
   }
 }

@@ -4,11 +4,7 @@ import { useCallback, useState } from 'react'
 import { useLockBodyScroll } from 'shared/lib/use-lock-body-scroll/useLockBodyScroll'
 export default {
   title: 'widgets/Modal',
-  component: Modal,
-
-  argTypes: {},
-  args: {
-  }
+  component: Modal
 } as ComponentMeta<typeof Modal>
 const Template: ComponentStory<typeof Modal> = (args) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)

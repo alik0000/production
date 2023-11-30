@@ -1,9 +1,9 @@
 import React, { ReactElement, useRef, useEffect, useState, memo } from 'react'
 import { cn } from 'shared/lib/class-name'
 import s from './Input.module.scss'
-import { Props } from '../input/types'
+import { InputProps } from '../input/types'
 
-export const Input = memo((props: Partial<Props>): ReactElement => {
+export const Input = memo((props: Partial<InputProps>): ReactElement => {
   const {
     className,
     value,

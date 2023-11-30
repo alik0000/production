@@ -18,8 +18,12 @@ void i18n
   .init({
     debug: __IS_DEV__,
     fallbackLng: 'ru',
+    lng: 'ru',
     interpolation: {
       escapeValue: false // not needed for react as it escapes by default
+    },
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json'
     }
   })
 

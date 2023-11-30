@@ -4,7 +4,6 @@ import { cn } from 'shared/lib/class-name'
 import { ThemeSwitcher } from 'shared/ui/theme-switcher/ui/ThemeSwitcher'
 import { useTranslation } from 'react-i18next'
 import { Navigation } from 'widgets/navigation'
-import ChevronRight from 'shared/assets/chevron-right.svg'
 import { Button } from 'shared/ui/button/Button'
 
 type Languages = Record<string, string>
@@ -29,7 +28,6 @@ export const Sidebar: FC = () => {
                         className={cn(s.toggle, { [s.isVisible]: visible })}
                         onClick={toggleCollapsed} data-testid='toggle-btn'
                     >
-                        <ChevronRight/>
                     </button>
                 </header>
                 <Navigation/>

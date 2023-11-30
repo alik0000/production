@@ -30,8 +30,6 @@ export const loginSlice = createSlice({
       })
       .addCase(loginAsyncThunk.rejected, (state, action) => {
         state.error = action.error.message
-        // console.log('state: ', state)
-        // console.log('reject: ', action)
         state.loading = false
       })
   }
