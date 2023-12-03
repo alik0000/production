@@ -17,7 +17,7 @@ server.use(async (req, res, next) => {
   next()
 })
 
-const { users, posts } = JSON.parse(fs.readFileSync(pathToDataBase, 'UTF-8'))
+const { users, posts, profile } = JSON.parse(fs.readFileSync(pathToDataBase, 'UTF-8'))
 server.post('/login', (req, res) => {
   try {
     const { email, password } = req.body
@@ -38,6 +38,18 @@ server.post('/login', (req, res) => {
 server.get('/posts', (req, res) => {
   try {
     return posts.length ? res.json(posts) : res.status(403).json({ message: 'posts not found' })
+  } catch (err) {
+    return res.status(500).json({ message: err.message })
+  }
+})
+
+server.get('/profile', (req, res) => {
+  if (!req.headers.authorization) {
+    return res.status(403).json({ message: 'AUTH ERROR' })
+  }
+
+  try {
+    return profile ? res.json(profile) : res.status(403).json({ message: 'posts not found' })
   } catch (err) {
     return res.status(500).json({ message: err.message })
   }

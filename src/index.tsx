@@ -9,14 +9,14 @@ import { PageLoader } from 'widgets/pag-loader'
 import { StoreProvider } from 'app/providers/store/ui/StoreProvider'
 
 render(
-    <StoreProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
             <Suspense fallback={<PageLoader/>}>
                 <ThemeProvider>
                     <App/>
                 </ThemeProvider>
             </Suspense>
-        </BrowserRouter>
-    </StoreProvider>,
+        </StoreProvider>
+    </BrowserRouter>,
     document.getElementById('root')
 )

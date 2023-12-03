@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LoginForm } from 'features'
-import s from './Login.module.scss'
+import s from './LoginPage.module.scss'
 import { AppLink } from 'shared/ui/app-link/AppLink'
 
-export const Login: FC = () => {
+export const LoginPage: FC = () => {
   const { t } = useTranslation('auth')
 
   return (

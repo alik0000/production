@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { LoginSchema } from '../types/loginSchema'
-import { loginAsyncThunk } from '../services/login/login'
+import { loginAsyncThunk } from '../services/loginAsyncThunk/loginAsyncThunk'
 
 const initialState: LoginSchema = {
   email: 'user1@user.user',

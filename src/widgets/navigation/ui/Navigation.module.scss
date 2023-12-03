@@ -12,8 +12,13 @@ nav {
     transition: opacity .35s ease-in-out;
 
     &:hover,
-    &.active {
+    &[aria-current] {
       opacity: 0.7;
+    }
+
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }

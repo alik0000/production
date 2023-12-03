@@ -1,14 +1,14 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Login } from './Login'
+import { LoginPage } from './LoginPage'
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator'
 import { Theme } from 'app/providers/theme/lib/ThemeContext'
 
 export default {
   title: 'pages/LoginForm',
-  component: Login
-} as ComponentMeta<typeof Login>
+  component: LoginPage
+} as ComponentMeta<typeof LoginPage>
 
-const Template: ComponentStory<typeof Login> = (args) => <Login {...args} />
+const Template: ComponentStory<typeof LoginPage> = (args) => <LoginPage {...args} />
 
 export const LoginLight = Template.bind({})
 LoginLight.storyName = 'Login light'

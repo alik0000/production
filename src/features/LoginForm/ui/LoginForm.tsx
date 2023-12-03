@@ -1,4 +1,4 @@
-import { FC, FormEvent, useCallback, useEffect } from 'react'
+import { FC, FormEvent, useCallback } from 'react'
 import { Input } from 'shared/ui/input/Input'
 import { useTranslation } from 'react-i18next'
 import s from './LoginForm.module.scss'
@@ -6,16 +6,12 @@ import { Button } from 'shared/ui/button/Button'
 import { useSelector, useDispatch } from 'react-redux'
 import { getLoginValue } from '../model/selectors/getLoginValues/getLoginValue'
 import { loginActions } from '../model/slice/loginSlice'
-import { loginAsyncThunk } from '../model/services/login/login'
-import { loggedIn } from 'entities/User'
-import { useNavigate } from 'react-router-dom'
+import { loginAsyncThunk } from '../model/services/loginAsyncThunk/loginAsyncThunk'
 
 export const LoginForm: FC = () => {
   const { t } = useTranslation('auth')
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const { email, password, error } = useSelector(getLoginValue)
-  const isLoggedIn = useSelector(loggedIn)
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.changeUsername(value))
@@ -29,12 +25,6 @@ export const LoginForm: FC = () => {
     e.preventDefault()
     dispatch(loginAsyncThunk({ email, password }))
   }, [dispatch, email, password])
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate('/')
-    }
-  }, [navigate, isLoggedIn])
 
   return (
         <form className={s.form} onSubmit={onSubmit}>
